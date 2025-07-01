@@ -58,14 +58,14 @@ O projeto consiste em um sistema completo de **Checklist Digital para Técnicos 
 
 ## 👨‍💻 Integrantes
 
-| Nome              | GitHub                                     |
-|-------------------|--------------------------------------------|
-| Ana Julia         | [@4nanotfound](https://github.com/4nanotfound)     |
-| Gabriel Zanoni    | [@GbrielZanoni](https://github.com/GbrielZanoni)   |
-| Mateus Euzébio    | [@mateuseuz](https://github.com/mateuseuz)         |
-| Gabriel Moura     | [@gmoura0](https://github.com/gmoura0 )            |
-| João Gabriel      | [@JoaoGabFB](https://github.com/JoaoGabFB)         |
-| Maria Delmonaco   | [@mariadelmonaco](https://github.com/mariadelmonaco)|
+| Nome                      | GitHub                                                | Cargo            |
+|---------------------------|-------------------------------------------------------|------------------|
+| Ana Julia                 | [@4nanotfound](https://github.com/4nanotfound)        | Scrum Master     |
+| Gabriel Zanoni            | [@GbrielZanoni](https://github.com/GbrielZanoni)      | Tech Lead        |
+| Mateus Euzébio            | [@mateuseuz](https://github.com/mateuseuz)            | Project Manager  |
+| Gabriel Moura             | [@gmoura0](https://github.com/gmoura0)                | Project Owner    |
+| João Gabriel              | [@JoaoGabFB](https://github.com/JoaoGabFB)            | Developer        |
+| Maria Delmonaco           | [@mariadelmonaco](https://github.com/mariadelmonaco)  | Developer        |
 
 ---
 
