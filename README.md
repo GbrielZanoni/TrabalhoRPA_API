@@ -1,5 +1,5 @@
 [![Build](https://github.com/GbrielZanoni/TrabalhoRPA/actions/workflows/streamlit-check.yml/badge.svg)](https://github.com/GbrielZanoni/TrabalhoRPA/actions/workflows/streamlit-check.yml)
-[![API Health Check](https://github.com/GbrielZanoni/TrabalhoRPA_API/actions/workflows/api-health.yml/badge.svg)](https://github.com/GbrielZanoni/TrabalhoRPA_API/actions/workflows/api-health.yml)
+[![API Health Check](https://github.com/GbrielZanoni/TrabalhoRPA_API/actions/workflows/check-api.yml/badge.svg)](https://github.com/GbrielZanoni/TrabalhoRPA_API/actions/workflows/api-health.yml)
 ![Python](https://img.shields.io/badge/python-3.11+-blue)
 ![FastAPI](https://img.shields.io/badge/API-FastAPI-009688?logo=fastapi)
 ![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-ff4b4b?logo=streamlit&logoColor=white)
