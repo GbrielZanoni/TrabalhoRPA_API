@@ -1,8 +1,14 @@
 from models import Chamado
 from sqlalchemy.orm import Session
 
-def criar_chamado(db: Session, local_subestacao: str, nome_tecnico: str, acao_tomada: str, gravidade: str):
-    chamado = Chamado(local_subestacao=local_subestacao, nome_tecnico=nome_tecnico, acao_tomada=acao_tomada, gravidade=gravidade)
+def criar_chamado(db: Session, local_subestacao: str, nome_tecnico: str, acao_tomada: str, gravidade: str, situacao_subestacao: str):
+    chamado = Chamado(
+        local_subestacao=local_subestacao,
+        nome_tecnico=nome_tecnico,
+        acao_tomada=acao_tomada,
+        gravidade=gravidade,
+        situacao_subestacao=situacao_subestacao  
+    )
     db.add(chamado)
     db.commit()
     db.refresh(chamado)

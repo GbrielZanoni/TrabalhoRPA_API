@@ -10,3 +10,4 @@ class Chamado(Base):
     nome_tecnico = Column(String)
     acao_tomada = Column(String)
     gravidade = Column(String)
+    situacao_subestacao = Column(String)
