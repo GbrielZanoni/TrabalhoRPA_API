@@ -1,9 +1,8 @@
-from fastapi import FastAPI, File, Form, UploadFile, Depends
+from fastapi import FastAPI, Form, Depends
 from sqlalchemy.orm import Session
-from crud import criar_registro, listar_registros
+from crud import criar_chamado, listar_chamados, obter_chamado_por_id, depuracao_chamados
 from database import SessionLocal, engine
 from models import Base
-import shutil
 
 Base.metadata.create_all(bind=engine)
 
@@ -16,16 +15,25 @@ def get_db():
     finally:
         db.close()
 
-@app.post("/enviar/")
-async def enviar_dados(
-    nome: str = Form(...),
-    observacao: str = Form(...),
-    imagem: UploadFile = File(...),
+@app.post("/chamado/")
+async def enviar_chamado(
+    local_subestacao: str = Form(...),
+    nome_tecnico: str = Form(...),
+    acao_tomada: str = Form(...),
+    gravidade: str = Form(...),
     db: Session = Depends(get_db)
 ):
-    img_bytes = await imagem.read()
-    return criar_registro(db, nome, observacao, img_bytes)
+    return criar_chamado(db, local_subestacao, nome_tecnico, acao_tomada, gravidade)
 
-@app.get("/registros/")
-def listar(db: Session = Depends(get_db)):
-    return listar_registros(db)
+@app.get("/chamados/")
+def listar_chamados_view(db: Session = Depends(get_db)):
+    return listar_chamados(db)
+
+@app.get("/chamado/{chamado_id}")
+def obter_chamado(chamado_id: int, db: Session = Depends(get_db)):
+    return obter_chamado_por_id(db, chamado_id)
+
+@app.get("/depuracao/")
+def depuracao(db: Session = Depends(get_db)):
+    total, chamados = depuracao_chamados(db)
+    return {"total_chamados": total, "chamados": chamados}

@@ -1,9 +1,12 @@
-from sqlalchemy import Column, Integer, String, LargeBinary
+from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy.sql import func
 from database import Base
 
-class Registro(Base):
-    __tablename__ = "registros"
+class Chamado(Base):
+    __tablename__ = "chamados"
     id = Column(Integer, primary_key=True, index=True)
-    nome = Column(String)
-    observacao = Column(String)
-    imagem = Column(LargeBinary)
+    data_hora = Column(DateTime, default=func.now())
+    local_subestacao = Column(String)
+    nome_tecnico = Column(String)
+    acao_tomada = Column(String)
+    gravidade = Column(String)
