@@ -22,3 +22,21 @@ def obter_chamado_por_id(db: Session, chamado_id: int):
 
 def depuracao_chamados(db: Session):
     return db.query(Chamado).count(), db.query(Chamado).all()
+
+def remover_todos_chamados(db: Session):
+    db.query(Chamado).delete()
+    db.commit()
+
+def remover_chamado_por_id(db: Session, chamado_id: int):
+    chamado = db.query(Chamado).filter(Chamado.id == chamado_id).first()
+    if chamado:
+        db.delete(chamado)
+        db.commit()
+
+def validar_chamado(db: Session, chamado_id: int, validar: bool):
+    chamado = db.query(Chamado).filter(Chamado.id == chamado_id).first()
+    if chamado:
+        chamado.validacao = validar
+        db.commit()
+        db.refresh(chamado)
+    return chamado

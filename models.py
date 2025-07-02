@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy import Column, Integer, String, DateTime, Boolean
 from sqlalchemy.sql import func
 from database import Base
 
@@ -11,3 +11,4 @@ class Chamado(Base):
     acao_tomada = Column(String)
     gravidade = Column(String)
     situacao_subestacao = Column(String)
+    validacao = Column(Boolean, default=False)
