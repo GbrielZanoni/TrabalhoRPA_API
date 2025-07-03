@@ -1,6 +1,6 @@
 from models import Chamado
 from sqlalchemy.orm import Session
-from email import enviar_alerta_email
+from email_service import enviar_alerta_email
 
 def criar_chamado(db: Session, local_subestacao: str, nome_tecnico: str, acao_tomada: str, gravidade: str, situacao_subestacao: str):
     chamado = Chamado(
@@ -22,7 +22,7 @@ def criar_chamado(db: Session, local_subestacao: str, nome_tecnico: str, acao_to
             "situacao": chamado.situacao_subestacao,
             "gravidade": chamado.gravidade,
             "acao": chamado.acao_tomada,
-            "data_criacao": chamado.data_hora.strftime('%d/%m/%Y %H:%M'),  
+            "data_criacao": chamado.data_hora.strftime('%d/%m/%Y %H:%M'), 
             "motivo": f"Gravidade {chamado.gravidade}" 
         }]
         enviar_alerta_email(alertas)
