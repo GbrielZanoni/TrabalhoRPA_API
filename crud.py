@@ -15,23 +15,7 @@ def criar_chamado(db: Session, local_subestacao: str, nome_tecnico: str, acao_to
     return chamado
 
 def listar_chamados(db: Session):
-    chamados = db.query(models.Chamado).all()
-    
-    resultado = []
-    for chamado in chamados:
-        chamado_dict = {
-            "id": chamado.id,
-            "data_hora": chamado.data_hora,
-            "local_subestacao": chamado.local_subestacao,
-            "nome_tecnico": chamado.nome_tecnico,
-            "acao_tomada": chamado.acao_tomada,
-            "gravidade": chamado.gravidade,
-            "situacao_subestacao": chamado.situacao_subestacao,
-            "validacao": chamado.validacao
-        }
-        resultado.append(chamado_dict)
-    
-    return resultado
+    return db.query(Chamado).all()
 
 def obter_chamado_por_id(db: Session, chamado_id: int):
     return db.query(Chamado).filter(Chamado.id == chamado_id).first()
