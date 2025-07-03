@@ -12,6 +12,20 @@ def criar_chamado(db: Session, local_subestacao: str, nome_tecnico: str, acao_to
     db.add(chamado)
     db.commit()
     db.refresh(chamado)
+
+    if gravidade in ["Crítico", "Urgente"]:  
+        alertas = [{
+            "id": chamado.id,
+            "local": chamado.local_subestacao,
+            "tecnico": chamado.nome_tecnico,
+            "situacao": chamado.situacao_subestacao,
+            "gravidade": chamado.gravidade,
+            "acao": chamado.acao_tomada,
+            "data_criacao": chamado.data_hora.strftime('%d/%m/%Y %H:%M'),  
+            "motivo": f"Gravidade {chamado.gravidade}" 
+        }]
+        enviar_alerta_email(alertas)
+
     return chamado
 
 def listar_chamados(db: Session):
