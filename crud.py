@@ -1,5 +1,6 @@
 from models import Chamado
 from sqlalchemy.orm import Session
+from email import enviar_alerta_email
 
 def criar_chamado(db: Session, local_subestacao: str, nome_tecnico: str, acao_tomada: str, gravidade: str, situacao_subestacao: str):
     chamado = Chamado(
