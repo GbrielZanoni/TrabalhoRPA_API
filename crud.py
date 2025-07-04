@@ -14,7 +14,7 @@ def criar_chamado(db: Session, local_subestacao: str, nome_tecnico: str, acao_to
     db.commit()
     db.refresh(chamado)
 
-    if gravidade in ["Crítica", "Urgente"]:  
+    if situacao_subestacao in ["Crítica"] or gravidade in ["Alta"]:
         alertas = [{
             "id": chamado.id,
             "local": chamado.local_subestacao,
