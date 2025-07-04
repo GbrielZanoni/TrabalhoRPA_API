@@ -24,6 +24,14 @@ Este repositório contém a solução desenvolvida pelos integrantes do bootcamp
 
 ---
 
+## Repositório do Dashboard
+[Link do Repositório do Dashboard](https://github.com/GbrielZanoni/TrabalhoRPA.git)
+
+## Repositório do APP
+[Link do Repositório da APP](https://github.com/gmoura0/wattsup)
+
+---
+
 ## 📌 Sobre o Projeto
 
 O projeto consiste em um sistema completo de **Checklist Digital para Técnicos de Campo**, permitindo:
